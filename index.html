@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Bright Chamber</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: monospace;
+        padding: 20px;
+        text-align: left;
+      }
+      #log {
+        white-space: pre-line;
+        margin-bottom: 20px;
+        height: 200px;
+        overflow-y: auto;
+      }
+      #controls {
+        margin-top: 20px;
+      }
+      button {
+        background: white;
+        color: black;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        display: block;
+        margin: 10px 0;
+        width: 200px;
+        position: relative;
+      }
+      .cooldown-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        background-color: gray;
+        width: 0%;
+        transition: width 1ms linear;
+      }
+      #tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .tab-button {
+        background: gray;
+        color: white;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+      }
+      .active-tab {
+        background: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="background-sound" src="soundtrack.mp3" loop autoplay></audio>
+    <div id="tabs">
+      <button class="tab-button active-tab" id="plain-tab">
+        A Grassy Plain
+      </button>
+      <button class="tab-button" id="cabin-tab" style="display: none">
+        A Dark Cabin
+      </button>
+    </div>
+    <div id="log">The sky is bright. You wake up in a lush grassy plain.</div>
+    <div id="controls">
+      <button id="explore" style="display: none">Approach the Cabin</button>
+      <button id="inspect" style="display: none">
+        Examine the Cabin
+        <div class="cooldown-bar"></div>
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
