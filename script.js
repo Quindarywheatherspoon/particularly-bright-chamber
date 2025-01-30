@@ -11,6 +11,13 @@ let currentLocation = "plain";
 let playerHealth = 50;
 let gauntManHealth = 25;
 
+document.addEventListener("click", function () {
+  let audio = document.getElementById("background-sound");
+  audio.muted = false;
+  audio.play();
+}, { once: true });
+
+
 // Battle log container
 let battleLog = document.createElement("div");
 battleLog.id = "battle-log";
